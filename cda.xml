@@ -3,28 +3,45 @@
     <realmCode code="IT"/>
     <typeId root="2.16.840.1.113883.1.3" extension="POCD_MT000040UV02"/>
     <templateId root="2.16.840.1.113883.2.9.10.1.9.1" extension="1.0" />
-    <id root="2.16.840.1.113883.2.9.2.190.4.4" extension="ext_68307ec5b581e7.51604313" assigningAuthorityName="Regione Sicilia"/>
+    <id root="2.16.840.1.113883.2.9.2.190.4.4" extension="ext_6842ee772027f7.09864771" assigningAuthorityName="Regione Sicilia"/>
     <code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.64" displayName="Nota di consulto"></code>
-    <effectiveTime value="20250523155725+0200"/>
+    <effectiveTime value="20250606153447+0200"/>
     <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7 Confidentiality" displayName="Normal"/> 
     <languageCode code="it-IT"/>
-    <setId root="2.16.840.1.113883.2.9.2.190.4.4" extension="ext_68307ec5b581e7.51604313" assigningAuthorityName="Regione Sicilia"/>
+    <setId root="2.16.840.1.113883.2.9.2.190.4.4" extension="ext_6842ee772027f7.09864771" assigningAuthorityName="Regione Sicilia"/>
     <versionNumber value="1"/>
     <recordTarget>
         <patientRole>
             <id root="2.16.840.1.113883.2.9.2.4.3.2" extension="RSSMRA80A01G273Z" assigningAuthorityName="Ministero Economia e Finanze"/>
+			<addr use="H"> 
+				<country>100</country>
+				<state>120</state>
+				<county>RM</county> 
+				<city>Palermo</city> 
+				<censusTract>82053</censusTract> 
+				<postalCode>90100</postalCode> 
+				<streetAddressLine>Via Empedocle Restivo, 18</streetAddressLine> 
+			</addr>
+			<telecom use="MC" value="tel:3395556667"/> 
             <patient>
                 <name>
                     <family>Rossi</family>
                     <given>Mario</given>
                 </name>
                 <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGender" />
-                    <birthTime value="19800101"/>
+                <birthTime value="19800101"/>
+				<birthplace> 
+					<place>
+						<addr>
+							<city>Palermo</city> 
+						</addr>					
+					</place> 
+				</birthplace> 
             </patient>
         </patientRole>
     </recordTarget>
     <author>
-        <time value="20250523155725+0200"/>
+        <time value="20250606153447+0200"/>
         <assignedAuthor classCode="ASSIGNED"> 
         <id root="2.16.840.1.113883.2.9.4.3.2"  extension="AAABBB00C00D000Y" assigningAuthorityName="MEF"/>
             <telecom value="tel:3334445556"/>
@@ -36,6 +53,30 @@
             </assignedPerson>
         </assignedAuthor>
     </author>
+
+	<dataEnterer typeCode="ENT">
+		<time value="20220509094000+0100"/>
+		<assignedEntity>
+			<id root="2.16.840.1.113883.2.9.4.3.2" extension="PROVAX00X00X000Y" assigningAuthorityName="MEF"/>
+			<addr>
+				<country>100</country>
+				<state>120</state>
+				<county>RM</county> 
+				<city>Roma</city> 
+				<censusTract>058091</censusTract>
+				<streetAddressLine>via Milano 7</streetAddressLine>
+			</addr>
+			<telecom use="HP" value="mailto:prova.provax@gmail.it"/>
+			<telecom use="MC" value="tel:3340000000"/>
+			<assignedPerson>
+				<name>
+					<family>Prova</family>
+					<given>Filippo</given>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</dataEnterer>	
+
     <custodian>
         <assignedCustodian>
             <representedCustodianOrganization>
@@ -45,7 +86,7 @@
         </assignedCustodian>
     </custodian>
     <legalAuthenticator>
-        <time value="20250523155725+0200"/>
+        <time value="20250606153447+0200"/>
         <signatureCode code="S"/> 
         <assignedEntity>
             <!-- Codice identificativo di chi firma il documento-->
@@ -59,9 +100,56 @@
             </assignedPerson>
         </assignedEntity>
     </legalAuthenticator>
+
+
+	<participant typeCode="REF">
+		<time value="20220509093000+0100"/>
+		<associatedEntity classCode="PROV">
+			<id root="2.16.840.1.113883.2.9.4.3.2" extension="PROVAX00X00X000Y" assigningAuthorityName="MEF"/>
+			<code code="3211" codeSystem="2.16.840.1.113883.2.9.6.2.7" codeSystemName="ISCO-08" displayName="Tecnici di imaging medicale e apparecchiature terapeutiche"/>
+			<addr>
+				<country>100</country>
+				<state>120</state>
+				<county>RM</county> 
+				<city>Roma</city> 
+				<censusTract>058091</censusTract> 
+				<postalCode>00164</postalCode> 
+				<streetAddressLine>via Corvetto 3</streetAddressLine>
+			</addr>
+			<telecom use="HP" value="mailto:prova.provax@gmail.it"/>
+			<associatedPerson>
+				<name>
+					<family>Test</family>
+					<given>Andrea</given>
+					<prefix>Dott.</prefix>
+				</name>
+			</associatedPerson>
+		</associatedEntity>
+	</participant>
+				
+	<inFulfillmentOf> 
+		<order classCode="ACT" moodCode="RQO"> 
+			<id root="2.16.840.1.113883.2.9.4.3.9" extension="[NRE]" assigningAuthorityName="MEF"/> 
+			<priorityCode code="R" codeSystem="2.16.840.1.113883.5.7" codeSystemName="HL7 ActPriority" displayName="Normale"/>
+		</order> 
+	</inFulfillmentOf> 	
+	<documentationOf> 
+		<serviceEvent> 
+			<code code="PROG" codeSystem="2.16.840.1.113883.2.9.5.1.4" codeSystemName="ActCode" displayName="Accesso Programmato"/>
+			<effectiveTime value="20220509073000+0100"/> 
+		</serviceEvent> 
+	</documentationOf> 	
+	<relatedDocument typeCode="RPLC"> 
+		<parentDocument> 
+			<id root="2.16.840.1.113883.2.9.2.120.4.4" extension="030702.LCNLDE90L47H501Q.20210420112426.F123E45G" assigningAuthorityName="HL7 Italia"/> 
+			<setId root="2.16.840.1.113883.2.9.2.120.4.4" extension="030702.LCNLDE90L47H501Q.20220420112426.DW322E34" assigningAuthorityName="Regione Lazio"/>
+			<versionNumber value="1"/>
+		</parentDocument> 
+	</relatedDocument>
+
     <componentOf>
         <encompassingEncounter>
-            <effectiveTime value = "20250523153243+0200"/>
+            <effectiveTime value = "20250606151500+0200"/>
             <location>
                 <healthCareFacility>
                     <serviceProviderOrganization>
@@ -161,8 +249,8 @@
 								</observation>
 							</component>
 						</organizer>
-
-						<component typeCode="COMP">
+					</entry>
+					<component typeCode="COMP">
 						<section ID="ALLERGIE">
 							<code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergie e/o reazioni avverse"/>
 							<title> Allergie </title>
@@ -300,14 +388,100 @@
                             <caption>Prestazioni Eseguite</caption>
                         </paragraph>
                         <list>
-							
+													<item ID="Prestazione-1">
+							<table border="1">
+								<thead>
+									<tr>
+										<th colspan="2">Prestazione 1</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>Codice Prestazione</th>
+										<td>89.52</td>
+									</tr>
+									<tr>
+										<th>Descrizione Prestazione eseguita</th>
+										<td>Elettrocardiogramma 2025</td>
+									</tr>
+									<tr>
+										<th>Data Prestazione eseguita</th>
+										<td>20250606000000+0200</td>
+									</tr>
+								</tbody>
+							</table>
+						
 								<paragraph>
 									<caption>Procedure Operative Eseguite</caption>
 								</paragraph>
-								
+																<list>
+										<item ID="Procedure-1">
+											<table border = "1">
+												<thead>
+													<tr>
+														<th colspan="2">Procedura 1</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th>Codice Prestazione Eseguita</th>
+														<td>89.52</td>
+													</tr>
+													<tr>
+														<th>Codice Procedura Operativa</th>
+														<td></td>
+													</tr>
+													<tr>
+														<th>Descrizione Procedura Operativa</th>
+														<td>Surgical operation note implants</td>
+													</tr>
+													<tr>
+														<th>Quantità</th>
+														<td></td>
+													</tr>
+													<tr>
+														<th>Modalità esecuzione procedura operativa</th>
+														<td></td>
+													</tr>
+													<tr>
+														<th>Strumentazione utilizzata</th>
+														<td></td>
+													</tr>
+													<tr>
+														<th>Parametri descrittivi della procedura</th>
+														<td></td>
+													</tr>
+													<tr>
+														<th>Note</th>
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+										</item>
+									</list>
+								</item>
+							</list>
 						</list>
                     </text>
-                                       
+                    						   <entry>
+								<act classCode="ACT" moodCode="EVN">
+									<code code="89.52" codeSystem="2.16.840.1.113883.2.9.2.30.6.11"/>
+										<originalText>
+											<reference value="Prestazione – 1"/>
+										</originalText>
+									<effectiveTime value="20250606000000+0200"/>
+									<entryRelationship typeCode="COMP">
+										<procedure classCode="PROC" moodCode="EVN">
+											<code code="55122-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Surgical operation note implants">
+												<originalText>
+													<reference value="#Procedura - 1"/>
+												</originalText>
+											</code>
+											<effectiveTime value="20250606000000+0200"/>
+										</procedure>
+									</entryRelationship>
+								</act>
+						   </entry>                   
                 </section>
             </component>
 			<component typeCode="COMP">
